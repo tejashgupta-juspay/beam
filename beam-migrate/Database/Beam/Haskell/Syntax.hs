@@ -677,6 +677,7 @@ instance IsSql92ExpressionSyntax HsExpr where
 
   castE = error "castE"
   extractE = error "extractE"
+  jsonExtractE = error "jsonExtractE"
 
   isNullE = hsApp (hsVar "isNullE") . pure
   isNotNullE = hsApp (hsVar "isNotNullE") . pure
