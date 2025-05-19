@@ -800,6 +800,7 @@ instance IsSql92ExpressionSyntax SqliteExpressionSyntax where
   trimE x = SqliteExpressionSyntax (emit "TRIM" <> parens (fromSqliteExpression x))
   coalesceE es = SqliteExpressionSyntax (emit "COALESCE" <> parens (commas (map fromSqliteExpression es)))
   extractE = sqliteExtract
+  -- jsonExtractE = sqliteExtract
   castE e t = SqliteExpressionSyntax (emit "CAST" <> parens (parens (fromSqliteExpression e) <> emit " AS " <> fromSqliteDataType t))
   caseE cases else_ =
     SqliteExpressionSyntax $

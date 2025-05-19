@@ -764,6 +764,7 @@ instance IsSql92ExpressionSyntax PgExpressionSyntax where
   trimE x = PgExpressionSyntax (emit "TRIM(" <> fromPgExpression x <> emit ")")
   coalesceE es = PgExpressionSyntax (emit "COALESCE(" <> pgSepBy (emit ", ") (map fromPgExpression es) <> emit ")")
   extractE field from = PgExpressionSyntax (emit "EXTRACT(" <> fromPgExtractField field <> emit " FROM (" <> fromPgExpression from <> emit "))")
+  -- extractE field from = PgExpressionSyntax (emit "JSON_EXTRACT(" <> fromPgExtractField field <> emit ", " <> fromPgExpression from <> emit ")")
   castE e to = PgExpressionSyntax (emit "CAST((" <> fromPgExpression e <> emit ") AS " <> fromPgDataType to <> emit ")")
   caseE cases else_ =
       PgExpressionSyntax $

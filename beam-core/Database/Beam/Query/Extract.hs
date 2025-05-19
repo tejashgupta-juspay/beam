@@ -32,6 +32,11 @@ extract_ :: BeamSqlBackend be
 extract_ (ExtractField field) (QExpr expr) =
     QExpr (extractE field <$> expr)
 
+-- jsonExtract_ :: BeamSqlBackend be
+--          => ExtractField be tgt a -> QGenExpr ctxt be s tgt -> QGenExpr cxt be s a
+-- jsonExtract_ (ExtractField field) (QExpr expr) =
+--     QExpr (jsonExtractE field <$> expr)
+
 -- | Type-class for types that contain a time component
 class HasSqlTime tgt
 instance HasSqlTime LocalTime
