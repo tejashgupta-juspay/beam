@@ -235,7 +235,7 @@ instance IsSql92ExpressionSyntax SqlSyntaxBuilder where
   extractE what from =
     SqlSyntaxBuilder $ byteString "EXTRACT(" <> buildSql what <> byteString " FROM (" <> buildSql from <> byteString "))"
   jsonExtractE what from =
-    SqlSyntaxBuilder $ byteString "JSON_EXTRACT(" <> buildSql what <> byteString "," <> from <> byteString ")"
+    SqlSyntaxBuilder $ byteString "JSON_EXTRACT(" <> buildSql what <> byteString "," <> buildSql from <> byteString ")"
   absE = sqlFuncOp "ABS"
   charLengthE = sqlFuncOp "CHAR_LENGTH"
   bitLengthE = sqlFuncOp "BIT_LENGTH"

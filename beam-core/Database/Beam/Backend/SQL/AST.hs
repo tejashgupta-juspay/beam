@@ -263,7 +263,7 @@ data Expression
   | ExpressionPosition Expression Expression
   | ExpressionCast Expression DataType
   | ExpressionExtract ExtractField Expression
-  | ExpressionJSONExtract Expression Text
+  | ExpressionJSONExtract Expression Expression
   | ExpressionCharLength Expression
   | ExpressionOctetLength Expression
   | ExpressionBitLength Expression

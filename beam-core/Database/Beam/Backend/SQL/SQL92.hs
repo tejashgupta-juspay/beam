@@ -311,7 +311,7 @@ class ( HasSqlValueSyntax (Sql92ExpressionValueSyntax expr) Int
     :: Sql92ExpressionExtractFieldSyntax expr -> expr -> expr
 
   jsonExtractE 
-    :: expr -> Text -> expr
+    :: expr -> expr -> expr
 
   existsE, uniqueE, subqueryE
     :: Sql92ExpressionSelectSyntax expr -> expr
