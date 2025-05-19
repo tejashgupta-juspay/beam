@@ -263,6 +263,7 @@ data Expression
   | ExpressionPosition Expression Expression
   | ExpressionCast Expression DataType
   | ExpressionExtract ExtractField Expression
+  | ExpressionJSONExtract FieldName Expression
   | ExpressionCharLength Expression
   | ExpressionOctetLength Expression
   | ExpressionBitLength Expression
@@ -323,6 +324,8 @@ instance IsSql92ExpressionSyntax Expression where
   nullIfE = ExpressionNullIf
   positionE = ExpressionPosition
   extractE = ExpressionExtract
+  jsonExtractE = ExpressionJSONExtract
+
   castE = ExpressionCast
 
   fieldE = ExpressionFieldName
