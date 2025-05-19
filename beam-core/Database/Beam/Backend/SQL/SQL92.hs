@@ -307,7 +307,8 @@ class ( HasSqlValueSyntax (Sql92ExpressionValueSyntax expr) Int
   --   Implementations that do not support this, should use CASE .. WHEN ..
   absE :: expr -> expr
 
-  extractE :: Sql92ExpressionExtractFieldSyntax expr -> expr -> expr
+  extractE, jsonExtractE 
+    :: Sql92ExpressionExtractFieldSyntax expr -> expr -> expr
 
   existsE, uniqueE, subqueryE
     :: Sql92ExpressionSelectSyntax expr -> expr
